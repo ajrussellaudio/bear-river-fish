@@ -15,4 +15,8 @@ class River
     @fishes << fish
   end
 
+  def remove_fish()
+    return @fishes.pop()
+  end
+
 end
