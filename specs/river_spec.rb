@@ -2,6 +2,7 @@ require("minitest/autorun")
 require("minitest/rg")
 
 require_relative("../river")
+require_relative("../fish")
 
 class RiverTest < MiniTest::Test
 
@@ -13,9 +14,15 @@ class RiverTest < MiniTest::Test
     assert_equal("Clyde", @river.name)
   end
 
-  def test_river_has_fish__empty
+  def test_count_fish
     result = @river.fish_count()
     assert_equal(0, result)
+  end
+
+  def test_can_add_fish
+    fish = Fish.new("Fingers")
+    @river.add_fish(fish)
+    assert_equal(1, @river.fish_count)
   end
 
 end
