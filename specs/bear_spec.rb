@@ -33,6 +33,16 @@ class BearTest < MiniTest::Test
     @bear.catch_fish(river.remove_fish())
 
     assert_equal(1, @bear.food_count())
+    assert_equal(0, river.fish_count())
+  end
+
+  def test_bear_cannot_eat_fish_from_empty_river
+    river = River.new("Clyde")
+
+    @bear.catch_fish(river.remove_fish())
+
+    assert_equal(0, @bear.food_count())
+    assert_equal(0, river.fish_count())
   end
 
 end
