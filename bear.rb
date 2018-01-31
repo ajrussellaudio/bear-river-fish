@@ -11,4 +11,8 @@ class Bear
     return @belly.count()
   end
 
+  def catch_fish(fish)
+    @belly << fish
+  end
+
 end
