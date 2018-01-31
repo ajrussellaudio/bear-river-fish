@@ -4,6 +4,11 @@ class Bear
 
   def initialize(name)
     @name = name
+    @belly = []
+  end
+
+  def food_count()
+    return @belly.count()
   end
 
 end
